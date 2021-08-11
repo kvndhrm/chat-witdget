@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210811 16:59:09.414" rpa="false" schemaversion="2">
+<suite id="s1" name="Vouch" source="C:\Kevan Dharma\QA\learning\chat-witdget\Tests\vouch.robot">
+<test id="s1-t1" name="Widget Button Should Open Chat Panel">
+<kw name="Go to landing page" library="chatPage">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${CHAT_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210811 16:59:09.599" level="INFO">Opening browser 'Chrome' to base url 'https://vouch-public.github.io/sdet-interview/'.</msg>
+<status status="PASS" starttime="20210811 16:59:09.599" endtime="20210811 16:59:11.557"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:09.599" endtime="20210811 16:59:11.557"/>
+</kw>
+<kw name="Wait until widget button appears" library="chatPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${WIDGET_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210811 16:59:11.557" endtime="20210811 16:59:12.905"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:11.557" endtime="20210811 16:59:12.905"/>
+</kw>
+<kw name="Click widget button" library="chatPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${WIDGET_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:12.905" level="INFO">Clicking element 'class:vc-widget-activator-content'.</msg>
+<status status="PASS" starttime="20210811 16:59:12.905" endtime="20210811 16:59:12.959"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:12.905" endtime="20210811 16:59:12.959"/>
+</kw>
+<kw name="Chat panel appears" library="chatPage">
+<kw name="Select Frame" library="Selenium2Library">
+<arg>${WIDGET_FRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210811 16:59:12.961" level="INFO">Selecting frame 'id:vc-chat-iframe'.</msg>
+<status status="PASS" starttime="20210811 16:59:12.961" endtime="20210811 16:59:12.990"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${TITLE_BAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210811 16:59:12.990" endtime="20210811 16:59:14.258"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:12.959" endtime="20210811 16:59:14.258"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:09.599" endtime="20210811 16:59:14.258"/>
+</test>
+<test id="s1-t2" name="Chat panel should have &quot;Vouch Widget&quot; as title">
+<kw name="Title equal to &quot;Vouch Widget&quot;" library="chatPage">
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>${TITLE_BAR}</arg>
+<arg>${VOUCHWIDGET_TEXT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210811 16:59:14.287" level="INFO">Element 'class:vc-app-bar-title-center' contains text 'Vouch Widget'.</msg>
+<status status="PASS" starttime="20210811 16:59:14.264" endtime="20210811 16:59:14.287"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:14.264" endtime="20210811 16:59:14.287"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:14.263" endtime="20210811 16:59:14.287"/>
+</test>
+<test id="s1-t3" name="Chat panel minimise button should close the chat panel">
+<kw name="Click the minimise button" library="chatPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${MINIMIZE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:14.295" level="INFO">Clicking element 'xpath:(//div[@class="vc-app-bar-item"])[2]'.</msg>
+<status status="PASS" starttime="20210811 16:59:14.295" endtime="20210811 16:59:14.386"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:14.295" endtime="20210811 16:59:14.386"/>
+</kw>
+<kw name="Chat panel disappears" library="chatPage">
+<kw name="Wait Until Element Is Not Visible" library="Selenium2Library">
+<arg>${TITLE_BAR}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20210811 16:59:14.386" endtime="20210811 16:59:14.638"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:14.386" endtime="20210811 16:59:14.638"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210811 16:59:14.640" endtime="20210811 16:59:17.188"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:14.295" endtime="20210811 16:59:17.188"/>
+</test>
+<test id="s1-t4" name="Get Started button should initiate conversation">
+<kw name="Go to landing page" library="chatPage">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${CHAT_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210811 16:59:17.195" level="INFO">Opening browser 'Chrome' to base url 'https://vouch-public.github.io/sdet-interview/'.</msg>
+<status status="PASS" starttime="20210811 16:59:17.188" endtime="20210811 16:59:18.739"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:17.188" endtime="20210811 16:59:18.739"/>
+</kw>
+<kw name="Wait until widget button appears" library="chatPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${WIDGET_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210811 16:59:18.739" endtime="20210811 16:59:19.642"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:18.739" endtime="20210811 16:59:19.642"/>
+</kw>
+<kw name="Click widget button" library="chatPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${WIDGET_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:19.642" level="INFO">Clicking element 'class:vc-widget-activator-content'.</msg>
+<status status="PASS" starttime="20210811 16:59:19.642" endtime="20210811 16:59:19.700"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:19.642" endtime="20210811 16:59:19.701"/>
+</kw>
+<kw name="Click Get Started button" library="chatPage">
+<kw name="Select Frame" library="Selenium2Library">
+<arg>${WIDGET_FRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210811 16:59:19.702" level="INFO">Selecting frame 'id:vc-chat-iframe'.</msg>
+<status status="PASS" starttime="20210811 16:59:19.702" endtime="20210811 16:59:19.729"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${GET_STARTED_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210811 16:59:19.729" endtime="20210811 16:59:21.686"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${GET_STARTED_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:21.686" level="INFO">Clicking element 'class:vc-widget-get-started-button'.</msg>
+<status status="PASS" starttime="20210811 16:59:21.686" endtime="20210811 16:59:21.777"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:19.701" endtime="20210811 16:59:21.777"/>
+</kw>
+<kw name="Widget shows &quot;Hi! How are you?&quot;" library="chatPage">
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>${FIRST_REPLY}</arg>
+<arg>Hi! How are you?</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210811 16:59:21.784" endtime="20210811 16:59:23.603"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:21.777" endtime="20210811 16:59:23.603"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:17.188" endtime="20210811 16:59:23.603"/>
+</test>
+<test id="s1-t5" name="Sending &quot;hello&quot; message">
+<kw name="Type &quot;hello&quot; in text input" library="chatPage">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${TEXT_INPUT}</arg>
+<arg>${HELLO_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:23.603" level="INFO">Typing text 'hello' into text field 'class:vc-widget-input-text'.</msg>
+<status status="PASS" starttime="20210811 16:59:23.603" endtime="20210811 16:59:23.708"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:23.603" endtime="20210811 16:59:23.708"/>
+</kw>
+<kw name="Hit &quot;enter&quot; key" library="chatPage">
+<kw name="Press Keys" library="Selenium2Library">
+<arg>${TEXT_INPUT}</arg>
+<arg>${ENTER_KEYS}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210811 16:59:23.708" level="INFO">Sending key(s) ('ENTER',) to class:vc-widget-input-text element.</msg>
+<msg timestamp="20210811 16:59:24.023" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210811 16:59:24.023" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210811 16:59:23.708" endtime="20210811 16:59:24.045"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:23.708" endtime="20210811 16:59:24.045"/>
+</kw>
+<kw name="Widget should reply with &quot;hello!&quot;" library="chatPage">
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>${HELLO_REPLY}</arg>
+<arg>hello!</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210811 16:59:24.048" endtime="20210811 16:59:26.917"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210811 16:59:28.917" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210811 16:59:26.917" endtime="20210811 16:59:28.917"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:24.047" endtime="20210811 16:59:28.917"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:23.603" endtime="20210811 16:59:28.917"/>
+</test>
+<test id="s1-t6" name="Widget bottom bar buttons should trigger messages when clicked">
+<kw name="Click &quot;Hello&quot; button at the bottom bar" library="chatPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${HELLO_BUTTON_BOTTOM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:28.922" level="INFO">Clicking element 'class:vc-menu-bar-item-container'.</msg>
+<status status="PASS" starttime="20210811 16:59:28.922" endtime="20210811 16:59:29.010"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:28.922" endtime="20210811 16:59:29.010"/>
+</kw>
+<kw name="Widget should reply with &quot;hello!&quot;" library="chatPage">
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>${HELLO_REPLY}</arg>
+<arg>hello!</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210811 16:59:29.011" endtime="20210811 16:59:29.028"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210811 16:59:31.040" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210811 16:59:29.028" endtime="20210811 16:59:31.040"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:29.011" endtime="20210811 16:59:31.040"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:28.922" endtime="20210811 16:59:31.040"/>
+</test>
+<test id="s1-t7" name="Widget buttons should trigger messages">
+<kw name="Click &quot;What&quot; button" library="chatPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${WHAT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:31.040" level="INFO">Clicking element 'class:message-button'.</msg>
+<status status="PASS" starttime="20210811 16:59:31.040" endtime="20210811 16:59:31.147"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:31.040" endtime="20210811 16:59:31.147"/>
+</kw>
+<kw name="Widget should reply with &quot;what ?&quot;" library="chatPage">
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>${LAST_REPLY}</arg>
+<arg>what ?</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210811 16:59:31.147" endtime="20210811 16:59:32.098"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:31.147" endtime="20210811 16:59:32.098"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:31.040" endtime="20210811 16:59:32.106"/>
+</test>
+<test id="s1-t8" name="Widget retains conversation">
+<kw name="Refresh the page" library="chatPage">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20210811 16:59:32.106" endtime="20210811 16:59:32.205"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:32.106" endtime="20210811 16:59:32.205"/>
+</kw>
+<kw name="Widget should contains the same messages" library="chatPage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${WIDGET_FRAME}</arg>
+<arg>timeout=10</arg>
+<arg>error=check your connection</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210811 16:59:32.207" endtime="20210811 16:59:38.020"/>
+</kw>
+<kw name="Select Frame" library="Selenium2Library">
+<arg>${WIDGET_FRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210811 16:59:38.020" level="INFO">Selecting frame 'id:vc-chat-iframe'.</msg>
+<status status="PASS" starttime="20210811 16:59:38.020" endtime="20210811 16:59:38.053"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${LAST_MESSAGE}</var>
+<arg>${LAST_REPLY}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210811 16:59:38.077" level="INFO">${LAST_MESSAGE} = what ?</msg>
+<status status="PASS" starttime="20210811 16:59:38.053" endtime="20210811 16:59:38.077"/>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>${LAST_REPLY}</arg>
+<arg>${LAST_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210811 16:59:38.094" level="INFO">Element 'xpath:(//div[@class="vc-message-text-bubble"])[last()]' contains text 'what ?'.</msg>
+<status status="PASS" starttime="20210811 16:59:38.077" endtime="20210811 16:59:38.094"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:32.206" endtime="20210811 16:59:38.094"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210811 16:59:38.102" endtime="20210811 16:59:40.257"/>
+</kw>
+<status status="PASS" starttime="20210811 16:59:32.106" endtime="20210811 16:59:40.257"/>
+</test>
+<status status="PASS" starttime="20210811 16:59:09.414" endtime="20210811 16:59:40.257"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="Vouch">Vouch</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
